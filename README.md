@@ -1,3 +1,11 @@
+# Dapp UI
+
+Forkable template UI for dapps.
+
+Includes Wagmi v2, Viem v2, WalletConnect Web3Modal, Next.JS, Chakra UI. Easy setup for React providers and layout. NavBar included with wallet connection built in.
+
+[Live Preview](https://dapp-ui-git-main-zoomer-8daeefc8.vercel.app)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
