@@ -7,7 +7,15 @@ import {
   Spacer,
   useColorMode,
 } from "@chakra-ui/react";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { createWeb3Modal } from "@web3modal/wagmi/react";
+
+import { chains, projectId, wagmiConfig } from "@/wagmi";
+
+createWeb3Modal({
+  wagmiConfig,
+  projectId,
+  chains,
+});
 
 export const NavBar = () => {
   const { toggleColorMode, colorMode } = useColorMode();
@@ -28,7 +36,7 @@ export const NavBar = () => {
             icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
           />
           <Box>
-            <ConnectButton />
+            <w3m-button />
           </Box>
         </Flex>
       </Flex>

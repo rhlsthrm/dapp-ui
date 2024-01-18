@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv } from "@wagmi/cli";
-import { etherscan, react, erc } from "@wagmi/cli/plugins";
-import { goerli, mainnet } from "wagmi/chains";
+import { etherscan, react } from "@wagmi/cli/plugins";
+import { erc20Abi } from "viem";
+import { mainnet } from "wagmi/chains";
 
 export default defineConfig(() => {
   const env = loadEnv({
@@ -9,11 +10,13 @@ export default defineConfig(() => {
   });
   return {
     out: "src/generated.ts",
+    contracts: [
+      {
+        abi: erc20Abi,
+        name: "erc",
+      },
+    ],
     plugins: [
-      erc({
-        20: false,
-        721: true,
-      }),
       etherscan({
         apiKey: env.ETHERSCAN_API_KEY!,
         chainId: mainnet.id,
