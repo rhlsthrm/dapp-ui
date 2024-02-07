@@ -9,12 +9,11 @@ import {
 } from "@chakra-ui/react";
 import { createWeb3Modal } from "@web3modal/wagmi/react";
 
-import { chains, projectId, wagmiConfig } from "@/wagmi";
+import { projectId, wagmiConfig } from "@/wagmi";
 
 createWeb3Modal({
-  wagmiConfig,
+  wagmiConfig: wagmiConfig as any,
   projectId,
-  chains,
 });
 
 export const NavBar = () => {

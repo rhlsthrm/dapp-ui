@@ -32,7 +32,7 @@ export const chains: [Chain, ...Chain[]] = [
 export const wagmiConfig = defaultWagmiConfig({
   chains, // required
   projectId, // required
-  metadata: { ...metadata, verifyUrl: "" }, // required
+  metadata: { ...metadata }, // required
   enableWalletConnect: true, // Optional - true by default
   enableInjected: true, // Optional - true by default
   enableEIP6963: true, // Optional - true by default

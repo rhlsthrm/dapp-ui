@@ -23,13 +23,12 @@ export function Providers({ children }: { children: React.ReactNode }) {
             },
             body: {
               overflowX: "hidden",
-              // backgroundImage: "url(https://pbs.twimg.com/media/F6J9eSNXwAAW0hL?format=jpg&name=large)"
             },
           }),
         },
       })}
     >
-      <WagmiProvider config={wagmiConfig}>
+      <WagmiProvider config={wagmiConfig as any}>
         <QueryClientProvider client={queryClient}>
           {mounted && children}
         </QueryClientProvider>
